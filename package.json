@@ -1,6 +1,6 @@
 {
   "name": "ml2-ui",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "react component based on react and tailwindcss",
   "homepage": "https://minalouisleon.github.io/ml2-ui",
   "repository": {
@@ -9,19 +9,19 @@
   },
   "files": [
     "/lib",
-    "/Form"
+    "/Form",
+    "/Table"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "storybook:docs": "start-storybook --docs -p 6006",
     "build-storybook": "build-storybook",
-    "build-storybook:docs": "build-storybook --docs -o ./docs",
+    "build-storybook:docs": "rmdir /s docs && build-storybook --docs -o ./docs",
     "build:lib": "rollup -c",
     "prepublishOnly": "npm run cleanBuild && npm run build:lib",
     "postbuild:lib": "npm pack && 7z x -y *.tgz && 7z x -y *.tar && del /f *.tgz *.tar && rmdir /s package",
-    "cleanBuild": "rmdir /s lib Form",
-    "chromatic": "npx chromatic --project-token=00e065728d7a"
+    "cleanBuild": "rmdir /s lib Form Table"
   },
   "keywords": [],
   "author": "Mina Louis Leon",

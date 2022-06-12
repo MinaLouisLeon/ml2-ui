@@ -149,4 +149,76 @@ export default [
       terser()
     ],
   },
+  //Table commonjs
+  {
+    input: "./src/components/Table/Table.js",
+    output: {
+      file: "./Table/index.js",
+      format: "cjs",
+      exports:'default'
+    },
+    plugins: [
+      babel({
+        exclude: "node_modules/**",
+      }),
+      peerDepsExternal(),
+      postcss({
+        config: {
+          path: "./postcss.config.js",
+        },
+        extract: false,
+      }),
+      nodeResolve(),
+      commonjs(),
+      terser(),
+    ],
+  },
+  //UMD Table
+  {
+    input:'./src/components/Table/Table.js',
+    output:{
+      file:'./Table/index.umd.js',
+      format:'umd',
+      name:'ml2-ui',
+      globals:{
+        react: "React",
+        "prop-types" : "propTypes",
+      },
+    },
+    plugins:[
+      babel({
+        exclude:"node_modules/**",
+      }),
+      peerDepsExternal(),
+      postcss({
+        config:{
+          path:"./postcss.config.js",
+        },
+      }),
+      commonjs(),
+      terser(),
+    ],
+  },
+  //ES Table
+  {
+    input:'./src/components/Table/Table.js',
+    output:{
+      file:"./Table/index.es.js",
+      format:"es",
+      exports:"named",
+    },
+    plugins:[
+      babel({
+        exclude:"node_modules/**",
+      }),
+      peerDepsExternal(),
+      postcss({
+        config:{
+          path:"./postcss.config.js"
+        }
+      }),
+      commonjs(),
+      terser()
+    ],
+  },
 ];
