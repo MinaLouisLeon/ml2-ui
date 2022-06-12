@@ -1,0 +1,66 @@
+{
+  "name": "ml2-ui",
+  "version": "1.1.0",
+  "description": "react component based on react and tailwindcss",
+  "homepage": "https://ml2-ui.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MinaLouisLeon/ml2-ui.git"
+  },
+  "files": [
+    "/lib",
+    "/Form"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "storybook:docs": "start-storybook --docs -p 6006",
+    "build-storybook": "build-storybook",
+    "build-storybook:docs": "build-storybook --docs -o ./docs",
+    "build:lib": "rollup -c",
+    "prepublishOnly": "npm run cleanBuild && npm run build:lib",
+    "postbuild:lib": "npm pack && 7z x -y *.tgz && 7z x -y *.tar && del /f *.tgz *.tar && rmdir /s package",
+    "cleanBuild": "rmdir /s lib Form",
+    "chromatic": "npx chromatic --project-token=00e065728d7a"
+  },
+  "keywords": [],
+  "author": "Mina Louis Leon",
+  "license": "MIT",
+  "peerDependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@storybook/addon-actions": "^6.5.8",
+    "@storybook/addon-essentials": "^6.5.8",
+    "@storybook/addon-interactions": "^6.5.8",
+    "@storybook/addon-links": "^6.5.8",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-webpack4": "^6.5.8",
+    "@storybook/manager-webpack4": "^6.5.8",
+    "@storybook/react": "^6.5.8",
+    "@storybook/testing-library": "^0.0.11",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "chromatic": "^6.5.6",
+    "postcss": "^8.4.14",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "rollup": "^2.75.6",
+    "rollup-plugin-import-css": "^3.0.3",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "tailwindcss": "^3.0.24"
+  }
+}
