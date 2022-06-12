@@ -1,8 +1,8 @@
 {
   "name": "ml2-ui",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "react component based on react and tailwindcss",
-  "homepage": "https://ml2-ui.vercel.app/",
+  "homepage": "https://minalouisleon.github.io/ml2-ui",
   "repository": {
     "type": "git",
     "url": "https://github.com/MinaLouisLeon/ml2-ui.git"
