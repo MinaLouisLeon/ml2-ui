@@ -4,6 +4,6 @@ export default create({
     base:'light',
     brandTitle : 'ML2 UI',
     brandImage: logo,
-    brandUrl: 'https://minalouisleon.github.io/ml2-ui/',
+    brandUrl: 'https://ml2-ui.vercel.app/',
     brandTarget: '_self',
 })

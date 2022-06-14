@@ -3,8 +3,8 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateRows : {
-        "20-px" : "20px"
-      }
+        "large-calendar" : "45px 20px"
+      },
     },
     darkMode : 'media',
   },

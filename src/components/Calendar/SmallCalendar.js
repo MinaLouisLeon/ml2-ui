@@ -3,8 +3,8 @@ import "../../index.css";
 import PropTypes from "prop-types";
 import dayjs from "dayjs";
 import { getMonth } from "./util";
-const SmallCalendar = ({ month = 6 ,onDaySelect}) => {
-  const [monthIndexState, setMonthIndexState] = useState(month - 1);
+const SmallCalendar = ({ month = null ,onDaySelect}) => {
+  const [monthIndexState, setMonthIndexState] = useState(month ? month - 1 : (parseInt(dayjs().format("MM")) - 1));
   const [currentMonth, setCurrentMonth] = useState(getMonth(monthIndexState));
   const [selectedDayState, setSelectedDayState] = useState(null);
   useEffect(() => {
@@ -32,12 +32,23 @@ const SmallCalendar = ({ month = 6 ,onDaySelect}) => {
     }
   }
   return (
-    <div className="w-64 border rounded">
+    <div className="border rounded w-80">
       <header className="flex justify-between">
         <p className="text-gray-500 font-bold mx-2 my-2">
           {dayjs(new Date(dayjs().year(), monthIndexState)).format("MMMM YYYY")}
         </p>
-        <div>
+        {/* <div> */}
+        <div className="flex flex-row flex-wrap justify-center content-center">
+         {/* today */}
+         <button
+            className="h-fit border rounded mx-2 my-2 px-1.5  text-gray-600"
+            onClick={() => {
+              setMonthIndexState(parseInt(dayjs().format("MM")) - 1)
+              // setMonthIndexState(monthIndexState - 1);
+            }}
+          >
+            Today
+          </button>
           {/* prev month */}
           <button
             className="h-fit mx-2 my-2"

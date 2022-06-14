@@ -17,12 +17,14 @@ export default [
     plugins: [
       babel({
         exclude: "node_modules/**",
+        babelHelpers:"bundled"
       }),
       peerDepsExternal(),
       postcss({
         config: {
           path: "./postcss.config.js",
         },
+        extract : 'ml2-ui.css'
       }),
       nodeResolve(),
       commonjs(),
@@ -39,11 +41,13 @@ export default [
       globals: {
         react: "React",
         "prop-types" : "propTypes",
+        dayjs : "dayjs"
       },
     },
     plugins: [
       babel({
         exclude: "node_modules/**",
+        babelHelpers:"bundled"
       }),
       peerDepsExternal(),
       postcss({
@@ -66,6 +70,7 @@ export default [
     plugins: [
       babel({
         exclude: "node_modules/**",
+        babelHelpers:"bundled"
       }),
       peerDepsExternal(),
       postcss({
@@ -88,6 +93,7 @@ export default [
     plugins: [
       babel({
         exclude: "node_modules/**",
+        babelHelpers:"bundled"
       }),
       peerDepsExternal(),
       postcss({
@@ -116,6 +122,7 @@ export default [
     plugins:[
       babel({
         exclude:"node_modules/**",
+        babelHelpers:"bundled"
       }),
       peerDepsExternal(),
       postcss({
@@ -138,6 +145,7 @@ export default [
     plugins:[
       babel({
         exclude:"node_modules/**",
+        babelHelpers:"bundled"
       }),
       peerDepsExternal(),
       postcss({
@@ -160,6 +168,7 @@ export default [
     plugins: [
       babel({
         exclude: "node_modules/**",
+        babelHelpers:"bundled"
       }),
       peerDepsExternal(),
       postcss({
@@ -188,6 +197,7 @@ export default [
     plugins:[
       babel({
         exclude:"node_modules/**",
+        babelHelpers:"bundled"
       }),
       peerDepsExternal(),
       postcss({
@@ -210,6 +220,159 @@ export default [
     plugins:[
       babel({
         exclude:"node_modules/**",
+        babelHelpers:"bundled"
+      }),
+      peerDepsExternal(),
+      postcss({
+        config:{
+          path:"./postcss.config.js"
+        }
+      }),
+      commonjs(),
+      terser()
+    ],
+  },
+  //Calendar commonjs
+  {
+    input: "./src/components/Calendar/Calendar.js",
+    output: {
+      file: "./Calendar/index.js",
+      format: "cjs",
+      exports:'default'
+    },
+    plugins: [
+      babel({
+        exclude: "node_modules/**",
+        babelHelpers:"bundled"
+      }),
+      peerDepsExternal(),
+      postcss({
+        config: {
+          path: "./postcss.config.js",
+        },
+        extract: false,
+      }),
+      nodeResolve(),
+      commonjs(),
+      terser(),
+    ],
+  },
+  //UMD Calendar
+  {
+    input:'./src/components/Calendar/Calendar.js',
+    output:{
+      file:'./Calendar/index.umd.js',
+      format:'umd',
+      name:'ml2-ui',
+      globals:{
+        react: "React",
+        "prop-types" : "propTypes",
+        dayjs : "dayjs"
+      },
+    },
+    plugins:[
+      babel({
+        exclude:"node_modules/**",
+        babelHelpers:"bundled"
+      }),
+      peerDepsExternal(),
+      postcss({
+        config:{
+          path:"./postcss.config.js",
+        },
+      }),
+      commonjs(),
+      terser(),
+    ],
+  },
+  //ES Calendar
+  {
+    input:'./src/components/Calendar/Calendar.js',
+    output:{
+      file:"./Calendar/index.es.js",
+      format:"es",
+      exports:"named",
+    },
+    plugins:[
+      babel({
+        exclude:"node_modules/**",
+        babelHelpers:"bundled"
+      }),
+      peerDepsExternal(),
+      postcss({
+        config:{
+          path:"./postcss.config.js"
+        }
+      }),
+      commonjs(),
+      terser()
+    ],
+  },
+  //SmallCalendar commonjs
+  {
+    input: "./src/components/Calendar/SmallCalendar.js",
+    output: {
+      file: "./SmallCalendar/index.js",
+      format: "cjs",
+      exports:'default'
+    },
+    plugins: [
+      babel({
+        exclude: "node_modules/**",
+        babelHelpers:"bundled"
+      }),
+      peerDepsExternal(),
+      postcss({
+        config: {
+          path: "./postcss.config.js",
+        },
+        extract: false,
+      }),
+      nodeResolve(),
+      commonjs(),
+      terser(),
+    ],
+  },
+  //UMD SmallCalendar
+  {
+    input:'./src/components/Calendar/SmallCalendar.js',
+    output:{
+      file:'./SmallCalendar/index.umd.js',
+      format:'umd',
+      name:'ml2-ui',
+      globals:{
+        react: "React",
+        "prop-types" : "propTypes",
+        dayjs : "dayjs"
+      },
+    },
+    plugins:[
+      babel({
+        exclude:"node_modules/**",
+        babelHelpers:"bundled"
+      }),
+      peerDepsExternal(),
+      postcss({
+        config:{
+          path:"./postcss.config.js",
+        },
+      }),
+      commonjs(),
+      terser(),
+    ],
+  },
+  //ES Table
+  {
+    input:'./src/components/Calendar/SmallCalendar.js',
+    output:{
+      file:"./SmallCalendar/index.es.js",
+      format:"es",
+      exports:"named",
+    },
+    plugins:[
+      babel({
+        exclude:"node_modules/**",
+        babelHelpers:"bundled"
       }),
       peerDepsExternal(),
       postcss({
