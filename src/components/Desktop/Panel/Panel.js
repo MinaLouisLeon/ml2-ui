@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Panel = ({children , icon=""}) => {
+const Panel = ({children , icon="",header=""}) => {
   return (
     <>
         {children}

@@ -9,11 +9,25 @@ export default {
 };
 
 const Template = (args) => (
-  <ML2Page>
     <PanelComp {...args}>
       <Panel id="DocPanel"
         icon={<FcDocument />}
+        header="Docs Panel"
       >
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
+        <h1>doc panel</h1>
         <h1>doc panel</h1>
       </Panel>
       <Panel id="HomePanel"
@@ -22,10 +36,9 @@ const Template = (args) => (
         <h1>Home panel</h1>
       </Panel>
     </PanelComp>
-  </ML2Page>
 );
 
 export const PanelSpace = Template.bind({});
 PanelSpace.args = {
-  position: "left",
+  position: "right",
 };
