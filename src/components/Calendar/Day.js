@@ -1,6 +1,5 @@
 import React from "react";
 import dayjs from 'dayjs';
-
 const Day = ({ day, rowIndex,events,onDaySelect,onEventSelect}) => {
     const getCurrentDayClass = () => {
         return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY") 
@@ -55,11 +54,11 @@ const Day = ({ day, rowIndex,events,onDaySelect,onEventSelect}) => {
             key === day.format("DD-MM-YYYY") ? <>
               {events[key].map((event) => {
                 return(
-                  <p key={key + (event.eventName)} 
+                  <div key={key + (event.eventName)} 
                   onClick={() => handleEventSelect(key,event)}
                   className={`w-full h-5 pl-1 mb-0.5 text-sm cursor-pointer ${getEventColorClass(event.color)}`}>
                     {event.eventName}
-                  </p>
+                  </div>
                 )
               })}
             </> : <></>

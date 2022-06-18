@@ -136,8 +136,20 @@ const SmallCalendar = ({ month = null ,onDaySelect}) => {
 };
 
 SmallCalendar.propTypes = {
+  /**
+   * month number `(from 1 to 12)` <br/>
+   * if not specified the component will render the current month
+   */
   month: PropTypes.number,
+  /**
+   * function that return selected date in format `DD-MM-YYYY` <br/>
+   * `onDaySelect=((date) => console.log(date))`
+   */
   onDaySelect : PropTypes.func
 };
+
+SmallCalendar.defaultProps = {
+  month : null
+}
 
 export default SmallCalendar;

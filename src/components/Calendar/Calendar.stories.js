@@ -1,10 +1,15 @@
 import React from 'react';
 import Calendar from './Calendar';
 import dayjs from 'dayjs';
-
+import mdx from './Calendar.mdx';
 export default {
     title : 'Calendar/Large Calender',
     component : Calendar,
+    parameters : {
+      docs : {
+        page : mdx
+      }
+    },
     argTypes : {
         onDaySelect : {
             action : 'selected Day '
@@ -44,7 +49,6 @@ const events = {
   }
 export const LargeCalendar = Template.bind({});
 LargeCalendar.args={
-    // monthNum : 6
     events : events
 }   
 

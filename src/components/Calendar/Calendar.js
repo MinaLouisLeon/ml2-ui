@@ -20,9 +20,26 @@ const Calendar = ({ monthNum = null ,events = {} ,onDaySelect,onEventSelect}) =>
 };
 
 Calendar.propTypes = {
+  /**
+   * month number `(from 1 to 12)` <br/>
+   * if not specified the component will render the current month
+   */
   monthNum: PropTypes.number,
+  /**
+   * events object to be redered in calendar cells
+   */
   events : PropTypes.object,
+  /**
+   * function that return selected date on format  `DD-MM-YY` <br/>
+   * `onDaySelect=((date) => console.log(date))`
+   */
   onDaySelect : PropTypes.func,
+  /**
+   * function that return object of the selected event <br/>
+   * `
+   *  {eventName : string , color : string , date : string}
+   * `
+   */
   onEventSelect : PropTypes.func
 };
 
