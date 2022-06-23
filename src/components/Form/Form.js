@@ -4,7 +4,6 @@ import Field from "./Field/Field";
 import PropTypes from "prop-types";
 let dataObj = {};
 const Form = ({ fields, buttons = ["ok", "cancel"], onSubmit }) => {
-  console.log(buttons);
   fields.map((field) => {
     dataObj = {
       ...dataObj,

@@ -1,8 +1,7 @@
-// import Panel from "./Panelq";
-import Panel from "./Panel";
+import '../../../index.css'
 import React, { useState, useEffect } from "react";
 import { IconContext } from "react-icons";
-const PanelSpace = ({ position = "left", children }) => {
+const PanelSpace = ({ position = "left", children,isHeaderEnabled=false }) => {
   const [panelsState, setPanelsState] = useState({});
   const handleState = () => {
     let panelsObj = {};
@@ -47,11 +46,10 @@ const PanelSpace = ({ position = "left", children }) => {
     });
     setPanelsState(stateObj);
   };
-
   return (
     <>
       {position === "left" && (
-        <div className="h-full absolute overflow-hidden top-0 left-0 bottom-0 w-3/12 flex">
+        <div className="h-full absolute overflow-hidden left-0 w-3/12 flex">
           {children && (
             <>
               <div
@@ -81,7 +79,7 @@ const PanelSpace = ({ position = "left", children }) => {
                     <header className="border-b-2 pl-2 text-sm bg-gray-200 text-gray-700">
                       {panelsState[key].header}
                     </header>
-                    <div className="pl-2 h-full w-full overflow-auto">{panelsState[key].children}</div>
+                    <div className="pl-2 h-full w-full overflow-scroll">{panelsState[key].children}</div>
                   </div>
                 );
               })}

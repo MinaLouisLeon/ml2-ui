@@ -1,12 +1,22 @@
-import React from 'react'
-
-const ML2Page = ({children , overflow=true}) => {
-    const getOverflowClass = () => {
-        return overflow ? "overflow-auto" : ""
-    }
+import React, { useState } from "react";
+import PageContent from "./PageContent";
+import "../../index.css";
+const ML2Page = ({ children}) => {
   return (
-    <div className={`relative w-screen h-screen m-0 ${getOverflowClass()}`}>{children}</div>
-  )
-}
+    <div className={`relative w-screen h-screen m-0`}>
+      <>
+        {children.length ? (
+          <>
+            {children[0].type.name === "PageHeader" && (
+              <PageContent isHeaderEnabled={true}>{children}</PageContent>
+            )}
+          </>
+        ) : (
+          <PageContent isHeaderEnabled={false}>{children}</PageContent>
+        )}
+      </>
+    </div>
+  );
+};
 
-export default ML2Page
+export default ML2Page;
