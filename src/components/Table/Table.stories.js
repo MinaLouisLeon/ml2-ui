@@ -14,16 +14,17 @@ TableComponent.args={
     columns:[
         {
             name : "ID",
-            dataIndex : "id"
+            dataIndex : "id",
         },{
             name : "First Name",
-            dataIndex : 'fname'
+            dataIndex : 'fname',
         },{
             name : "Last Name",
-            dataIndex : "lname"
+            dataIndex : "lname",
         },{
             name : "Age",
-            dataIndex : 'age'
+            dataIndex : 'age',
+            hidden : true
         }
     ],
     dataSource : [{

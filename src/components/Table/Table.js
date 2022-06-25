@@ -21,7 +21,6 @@ const Table = ({
     startEdit: false,
     rowData: null,
   });
-  console.log(editState);
   const [dataSourceState, setDataSourceState] = useState(dataSource);
   //func to map columns array of objects to create table header
   const handleColumns = () => {
@@ -29,10 +28,12 @@ const Table = ({
     return (
       <>
         {columns.map((column) => {
-          //construct columnArr with each column index
-          columnArr.push(column.dataIndex);
-          //render the header cells
-          return <th className="px-6 py-3">{column.name}</th>;
+          if (!column.hidden) {
+            //construct columnArr with each column index
+            columnArr.push(column.dataIndex);
+            //render the header cells
+            return <th className="px-6 py-3">{column.name}</th>;
+          }
         })}
       </>
     );
@@ -84,8 +85,9 @@ const Table = ({
                 )}
                 {enbaleInsert && !editState.startEdit && (
                   <span
-                  onClick={() => handleInsert(index)} 
-                  className="mr-3 cursor-pointer font-medium text-lime-600 dark:text-lime-500 hover:underline">
+                    onClick={() => handleInsert(index)}
+                    className="mr-3 cursor-pointer font-medium text-lime-600 dark:text-lime-500 hover:underline"
+                  >
                     Insert
                   </span>
                 )}
@@ -158,22 +160,25 @@ const Table = ({
     }
   };
   const handleInsert = (index) => {
-    let dataObj = {}
+    let dataObj = {};
     columnArr.map((item) => {
       dataObj = {
         ...dataObj,
-        [item] : ""
-      }
-    })
+        [item]: "",
+      };
+    });
     let dataSourceArr = dataSourceState;
-    dataSourceArr.splice(index+1,0,dataObj);
+    dataSourceArr.splice(index + 1, 0, dataObj);
     setDataSourceState(dataSourceArr);
-    setEditState({rowIndex:index + 1,startEdit:true,rowData:dataSourceArr[index+1]})
-    setDataLength(dataSourceArr.length)
-  }
+    setEditState({
+      rowIndex: index + 1,
+      startEdit: true,
+      rowData: dataSourceArr[index + 1],
+    });
+    setDataLength(dataSourceArr.length);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submit");
     let dataSourceArr = dataSourceState;
     dataSourceArr[editState.rowIndex] = editState.rowData;
     setDataSourceState(dataSourceArr);

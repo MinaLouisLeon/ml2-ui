@@ -1,6 +1,6 @@
 {
   "name": "ml2-ui",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "react component based on react and tailwindcss",
   "homepage": "https://ml2-ui.vercel.app/",
   "repository": {
