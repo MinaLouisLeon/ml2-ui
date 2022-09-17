@@ -1,16 +1,14 @@
-import {Story , ArgsTable} from '@storybook/addon-docs';
+import { Story, ArgsTable } from "@storybook/addon-docs";
 
 # Large Calendar
 
 ### Importing LargeCalendar
-`import {Calendar} from "ml2-ui"`
-`import "ml2-ui/lib/ml2-ui.css"`
-### or
+
 `import Calendar from "ml2-ui/Calendar"`
 no need for importing style sheet
 
 <Story id="calendar-large-calender--large-calendar" />
-<br/>
+<br />
 
 ## Properties
 
@@ -23,8 +21,13 @@ events color are `red` `orange` `green` `blue` `purple`
 event example :
 
     events = {
-        "03-06-2022" : {
-            eventName : "Meeting",
-            color : "green"
-        }
+        "03-06-2022" : [
+            {
+                eventName : "Meeting 1",
+                color : "green"
+            },{
+                eventName : "Meeting 2",
+                color : "red"
+            }
+        ]
     }

@@ -1,4 +1,4 @@
-
 ## ML2 UI
-version 1.1.0
- ([Docs](https://ml2-ui.vercel.app/))
+
+version 1.4.3
+([Docs](https://ml2-ui.vercel.app/))

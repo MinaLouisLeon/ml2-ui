@@ -179,7 +179,7 @@ const Table = ({
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    let dataSourceArr = dataSourceState;
+    let dataSourceArr =dataSourceState;
     dataSourceArr[editState.rowIndex] = editState.rowData;
     setDataSourceState(dataSourceArr);
     setEditState({ rowIndex: null, startEdit: false, rowData: null });
